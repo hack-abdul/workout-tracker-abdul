@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "bcrypt": "^6.0.0",
+    "firebase-admin": "^14.1.0"
+  }
+}

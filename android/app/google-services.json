@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "229275247278",
+    "project_id": "workout-tracker-abdul",
+    "storage_bucket": "workout-tracker-abdul.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229275247278:android:4c29e1bde251d77d46033f",
+        "android_client_info": {
+          "package_name": "com.mominabdulrehmaan.workout_tracker.workout_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_f6T0VPcJyyZR3nVparLp2aqOY9IOMDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
