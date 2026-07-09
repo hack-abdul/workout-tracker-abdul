@@ -98,18 +98,27 @@ class AestheticsApp extends StatelessWidget {
       );
     }
 
-    return ValueListenableBuilder<ThemeMode>(
-      valueListenable: AppTheme.themeNotifier,
-      builder: (context, currentMode, _) {
-        return MaterialApp(
-          title: 'Asthetics',
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          themeMode: currentMode,
-          home: const AuthGate(),
-        );
-      },
+    return MaterialApp(
+      title: 'Asthetics',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: AppTheme.background, // Zinc-950
+        primaryColor: const Color(0xFF2563EB), // Blue-600
+        colorScheme: ColorScheme.dark(
+          primary: const Color(0xFF2563EB),
+          secondary: const Color(0xFF7C3AED), // Purple-600
+          background: AppTheme.background,
+          surface: AppTheme.surface,
+          error: Colors.redAccent,
+        ),
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Color(0xFF2563EB),
+          selectionColor: Color(0xFF2563EB),
+          selectionHandleColor: Color(0xFF2563EB),
+        ),
+      ),
+      home: const AuthGate(),
     );
   }
 }
@@ -153,9 +162,9 @@ class AuthGate extends StatelessWidget {
       stream: firebaseService.authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Scaffold(
+          return Scaffold(
             backgroundColor: AppTheme.background,
-            body: Center(
+            body: const Center(
               child: CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2563EB)),
               ),

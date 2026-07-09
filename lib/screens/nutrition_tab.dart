@@ -1406,8 +1406,8 @@ class _DashboardViewState extends State<DashboardView> {
         Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color(0xFF064E3B), AppTheme.surface],
+            gradient: LinearGradient(
+              colors: [const Color(0xFF064E3B), AppTheme.surface],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),

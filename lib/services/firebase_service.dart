@@ -46,12 +46,11 @@ class FirebaseService {
   }
 
   // Save user preferences
-  Future<void> savePreferences(int restDuration, String unit, {String? themeMode}) async {
+  Future<void> savePreferences(int restDuration, String unit) async {
     if (userId == null) return;
     await _db.doc('users/$userId/settings/preferences').set({
       'defaultRestDuration': restDuration,
       'weightUnit': unit,
-      if (themeMode != null) 'themeMode': themeMode,
     }, SetOptions(merge: true));
   }
 

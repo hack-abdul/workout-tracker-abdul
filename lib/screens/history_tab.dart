@@ -98,8 +98,8 @@ class _HistoryTabState extends State<HistoryTab> {
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme: const ColorScheme.dark(
-              primary: Color(0xFF2563EB),
+            colorScheme: ColorScheme.dark(
+              primary: const Color(0xFF2563EB),
               onPrimary: Colors.white,
               surface: AppTheme.surface,
               onSurface: Colors.white,

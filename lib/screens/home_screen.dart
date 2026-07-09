@@ -33,8 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadPrefs() async {
     setState(() => _isLoading = true);
     final prefs = await _firebaseService.loadPreferences();
-    final themeStr = prefs['themeMode'] as String? ?? 'dark';
-    AppTheme.themeNotifier.value = (themeStr == 'light') ? ThemeMode.light : ThemeMode.dark;
     setState(() {
       _preferences = prefs;
       _isLoading = false;
@@ -42,8 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _onPreferencesChange(Map<String, dynamic> newPrefs) {
-    final themeStr = newPrefs['themeMode'] as String? ?? 'dark';
-    AppTheme.themeNotifier.value = (themeStr == 'light') ? ThemeMode.light : ThemeMode.dark;
     setState(() {
       _preferences = newPrefs;
     });
@@ -52,9 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Scaffold(
+      return Scaffold(
         backgroundColor: AppTheme.background,
-        body: Center(
+        body: const Center(
           child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2563EB))),
         ),
       );

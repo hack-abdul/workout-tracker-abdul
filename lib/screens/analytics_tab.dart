@@ -673,7 +673,7 @@ class _AnalyticsTabState extends State<AnalyticsTab> {
                           shrinkWrap: true,
                           padding: EdgeInsets.zero,
                           itemCount: chartPoints.length,
-                          separatorBuilder: (context, index) => const Divider(height: 1, color: AppTheme.border),
+                          separatorBuilder: (context, index) => Divider(height: 1, color: AppTheme.border),
                           itemBuilder: (context, index) {
                             final idx = chartPoints.length - 1 - index;
                             final item = chartPoints[idx];
